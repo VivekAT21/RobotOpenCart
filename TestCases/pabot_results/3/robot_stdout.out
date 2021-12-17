@@ -1,0 +1,19 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.AdminLogin CSV DataManager Test                                        
+==============================================================================
+Verify that user land on Administration page                          | PASS |
+------------------------------------------------------------------------------
+Verify that user should be able to login with different data          | FAIL |
+Keyword timeout 10 seconds exceeded.
+------------------------------------------------------------------------------
+Verify that user should land on "Dashboard" page after login          | PASS |
+------------------------------------------------------------------------------
+Suites.AdminLogin CSV DataManager Test                                | FAIL |
+3 tests, 2 passed, 1 failed
+==============================================================================
+Suites                                                                | FAIL |
+3 tests, 2 passed, 1 failed
+==============================================================================
+Output:  D:\projects\automationworkspace\OpenCart\TestCases\pabot_results\3\output.xml

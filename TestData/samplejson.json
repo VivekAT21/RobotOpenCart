@@ -1,0 +1,64 @@
+{
+  "policyNumber": "{{requestPolicyNumber}}",
+  "product": {
+    "plan": "A1",
+    "code": "AB20"
+  },
+  "partner": {
+      "code":"AIRBNBIN"
+  },
+  "applicationDate": "{{today}}",
+  "bookingNumber": "demo-{{randomNumber}}",
+  "price": {
+    "currency": "USD",
+    "scale": 6,
+    "amount": "29000000"
+  },
+  "fulfillment": {
+    "method": "EMAIL"
+  },
+  "itinerary": [
+    {
+      "type": "TRAVEL_DATE",
+      "reservationCost": {
+        "currency": "USD",
+        "scale": 6,
+        "amount": "369350000"
+      },
+      "reservationNumber": "4db7677d-3f7c-4042-81c1-0419f1ddbd87",
+      "startDate": "{{2daysfromtoday}}",
+      "endDate": "{{15daysfromtoday}}"
+    }
+  ],
+  "actors": [
+    {
+      "role": "POLICY_HOLDER",
+      "data": {
+        "type": "INDIVIDUAL",
+        "givenName": "TESTFIRST",
+        "familyName": "TESTLAST",
+        "homePhone": "8586666668",
+        "workPhone": "8585555555",
+        "email": "gkr@csatp.com",
+        "location": {
+            "address1": "TEST",
+            "city": "San Diego",
+            "state": "CA",
+            "postalCode": "92128",
+            "country": "US"
+        }
+      }
+    }
+  ],
+  "payments": [
+    {
+      "type": "ACCOUNTS_RECEIVABLE",
+      "amount": {
+        "currency": "USD",
+        "scale": 6,
+        "amount": "29000000"
+      }
+    }
+  ],
+  "requestDate": "2021-04-28T16:37:31.304Z"
+}

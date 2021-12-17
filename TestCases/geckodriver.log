@@ -1,0 +1,103 @@
+1639412464106	geckodriver	INFO	Listening on 127.0.0.1:55734
+1639412467241	mozrunner::runner	INFO	Running command: "C:\\P1639412467650	mozrunner::runner	INFO	Running command: "C:\\P1639412468904	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55749" "-no-remote" "-profile" console.warn: SearchSettings: "get: No settings file exists,console.warn: SearchSettings: "get: No settings file exists,console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\vivek.garg\\AppData\\Local\\Temp\\rust_mozprofilenchq8r\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55749/devtools/browser/f96741f4-20ad-4aea-ae8a-0d372b6fa15e
+1639412472564	Marionett1639412479565	Marionette	INFO	Stopped listening on port 55755
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+on 127.0.0.1:55881
+1639412479317	mozrunner::runner	INFO	Running command: "C:\\P1639412481095	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55890" "-no-remote" "-profile" "C:\\Users\\VIVEK~1.GAR\\AppData\\Local\\Temp\\rust_mozproficonsole.warn: SearchSettings: "get: No settings file exists,1639412484118	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55907" "-no-remote" "-profile" "C:\\Users\\VIVEK~1.GAR\\AppData\\Local\\Temp\\rust_mozprofileplMA01"
+1639412484406	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not op1639412503777	Marionette	INFO	Stopped listening on port 55897
+9412489896	Marionette	INFO	Stopped listening on port 55910
+s listening on ws://localhost:55907/devtools/browser/836fb961-6c2e-4dfd-8123-07e6ac8ba1de
+1639412486778	Marionette	INFO	Listening on port 55960
+1639412486852	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1639412492429	Marionette	INFO	Stopped listening on port 55960
+1639412492519	geckodriver	INFO	Listening on 127.0.0.1:56057
+1639412495649	mozrunner::runner	INFO	Running command: "C:\\P1639412498083	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56066" "-no-remote" "-profile" "C:\\Users\\VIVEK~1.GAR\\AppData\\Local\\Temp\\rust_mozprofileoTijfh"
+1639412498382	Marionette	INFO	Marionette enabled
+Hit MOZ_CRASH([unhandlable oom] js::wasm::Init) at /builds/worker/checkouts/gecko/js/src/vm/JSContext.cpp:1243
+#01: soundtouch::SoundTouch::operator=[C:\Program Files\Mozilla Firefox\xul.dll +0x43ca39a]
+#02: XRE_GetBootstrap[C:\Program Files\Mozilla Firefox\xul.dll +0x1619c]
+#03: XRE_GetBootstrap[C:\Program Files\Mozilla Firefox\xul.dll +0x15d2c]
+#04: XRE_GetBootstrap[C:\Program Files\Mozilla Fire1639412504470	Marionette	INFO	Stopped listening on port 56069
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+ +0x96412f]
+#07: workerlz4_compress[C:\Program Files\Mozilla Firefox\xul.dll +0xdd2e8a]
+#08: workerlz4_compress[C:\Program Files\Mozilla Firefox\xul.dll +0x11b7640]
+#09: GetNtLoaderAPI[C:\Program Files\Mozilla Firefox\firefox.exe +0x9f38]
+#10: IsSandboxedProcess[C:\Program Files\Mozilla Firefox\firefox.exe +0x1ca88]
+#11: ???[C:\Windows\System32\KERNEL32.DLL +0x17034]
+#12: ???[C:\Windows\SYSTEM32\ntdll.dll +0x52651]
+Exiting due to channel error.
+1639412500312	geckodriver	INFO	Listening on 127.0.0.1:56111
+1639412503439	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56112" "-no-remote" "-profile" "C:\\Users\\VIVEK~1.GAR\\AppData\\Local\\Temp\\rust_mozprofileD0leUb"
+1639412503729	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists,1639412508951	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56148" "-no-remote" "-profile" "C:\\Users\\VIVEK~1.GAR\\AppData\\Local\\Temp\1639412509389	mozrunner::runner	INFO	Running command: "C:\\Program Files\\console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not op1639412513822	Marionette	INFO	Stopped listening on port 56137
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+ils.jsm, line 1954: NS_ERROR_UNEXPECTED: Component returned faExiting due to channel error.
+Exiting due to channel error.
+ervice.tagsFolder]
+[GFX1-]: Failed to compile vertex shader: ps_text_run_ALPHA_PASS_TEXTURE_2D
+
+[2021-12-13T16:21:50Z ERROR webrender::device::gl] Failed to compile vertex shader: ps_text_run_ALPHA_PASS_TEXTURE_2D
+    
+[GFX1-]: DCompositionSurface::BeginDraw failed: 0x887a0005
+[GFX1-]: DCompositionSurface::BeginDraw failed: 0x887a0005
+[GFX1-]: wr_renderer_render: Shader(Comp[GFX1-]: Fallilation("ps_text_run_ALPHAback WR to SW-WR + D_PASS_TEXTURE_2D", ""))
+3D11
+[GFX1-]: GFX: RenderThread detected a device reset in PostUpdate
+[GFX1-]: Failed to make render context current during destroying.
+[GFX1-]: Failed to make render context current during destroying.
+[GFX1-]: [D3D11] failed to get compositor device.
+[GFX1-]: Failed to initialize CompositorD3D11 for SWGL: FEATURE_FAILURE_D3D11_NO_DEVICE
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+[GFX1-]: wr_renderer_render: OutOfMemory
+[GFX1-]: wr_renderer_render: OutOfMemory
+[GFX1-]: Fallback SW-WR + D3D11 to SW-WR
+out of memory: 0x0000000000100000 bytes requested
+Hit MOZ_CRASH([unhandlable oom] Irregexp NewByteArray) at /builds/worker/checkouts/gecko/js/src/vm/JSContext.cpp:1243
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#01: ??? (???:???)
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#02: ??? (???:???)
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#03: ??? (???:???)
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#04: ??? (???:???)
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#05: ??? (???:???)
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#06: ??? (???:???)
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#07: ??? (???:???)
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#08: ??? (???:???)
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#09: ??? (???:???)
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#10: ??? (???:???)
+### ERROR: SymLoadModule64: Not enough memory resources are available to process this command.
+#11: ??? (???:???)
+#12: ??? (???:???)
+Exiting due to channel error.
+1639412512057	geckodriver	INFO	Listening on 127.0.0.1:56214
+1639412515474	mozrunner::runner	INFO	Running command: "C:\\P1639412518165	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56227" "-no-remote" "-profile" "C:\\Users\\VIVEK~1.GAR\\AppData\\Local\\Temp\\rust_mozprofileN1GZPN"
+1639412518485	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\vivek.garg\\AppData\\Local\\Temp\\rust_mozprofileN1GZPN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56227/devtools/browser/238f5615-2233-4c48-afb1-a1d018d1f7db
+1639412520390	Marionette	INFO	Listening on port 56261
+1639412520871	RemoteAgent	WA1639412523571	Marionette	INFO	Stopped listening on port 56231639412540201	Marionette	INFO	Stopped listening on port 56261
+te to send/recv, messages will be lost
+

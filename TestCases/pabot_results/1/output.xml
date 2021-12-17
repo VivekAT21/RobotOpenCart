@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211214 14:30:13.655" rpa="false" schemaversion="2">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="APITest DataDriver" source="D:\projects\automationworkspace\OpenCart\TestCases\APITest_DataDriver.robot">
+<test id="s1-s1-t1" name="Verify that user should get created">
+<kw name="Add user">
+<arg>Vivek001</arg>
+<arg>QA</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${name}</arg>
+<arg>job=${job}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211214 14:30:14.456" level="INFO">${body} = {'name': 'Vivek001', 'job': 'QA'}</msg>
+<status status="PASS" starttime="20211214 14:30:14.455" endtime="20211214 14:30:14.456"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=text/plain</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211214 14:30:14.457" level="INFO">${header} = {'Content-Type': 'text/plain'}</msg>
+<status status="PASS" starttime="20211214 14:30:14.456" endtime="20211214 14:30:14.457"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${api_url}</var>
+<arg>${APIBASE_URL}/api/users</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211214 14:30:14.457" level="INFO">${api_url} = https://reqres.in/api/users</msg>
+<status status="PASS" starttime="20211214 14:30:14.457" endtime="20211214 14:30:14.457"/>
+</kw>
+<kw name="Get response from the PUT request" library="Basefile">
+<var>${string_resp}</var>
+<arg>${api_url}</arg>
+<arg>${body}</arg>
+<arg>${header}</arg>
+<kw name="POST" library="RequestsLibrary">
+<var>${string_resp}</var>
+<arg>${api_url}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20211214 14:30:15.229" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'text/plain', 'Content-Length': '20'} 
+ body=name=Vivek001&amp;job=QA 
+ </msg>
+<msg timestamp="20211214 14:30:15.229" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Tue, 14 Dec 2021 09:02:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"33-cunvH1kdVQwwCLfhWMWcuo+P6x8"', 'via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=RZFYcn8w8C1u2jgM9A%2BlGyM4PyTGEcbqAWjvIYZ%2BiF7583Q7l1rMSjcXFsRgycYXcj2JItdC9nkVAYJzcyoIXLHeu90RN%2B5dAdDIQsUusV4flgbsdd3JdmyQLtc%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6bd6417a683785e5-BOM', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400'} 
+ body={"id":"385","createdAt":"2021-12-14T09:02:52.853Z"} 
+ </msg>
+<msg timestamp="20211214 14:30:15.229" level="INFO">${string_resp} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211214 14:30:14.458" endtime="20211214 14:30:15.229"/>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<var>${json_resp}</var>
+<arg>${string_resp.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20211214 14:30:15.232" level="INFO">${json_resp} = {'id': '385', 'createdAt': '2021-12-14T09:02:52.853Z'}</msg>
+<status status="PASS" starttime="20211214 14:30:15.230" endtime="20211214 14:30:15.232"/>
+</kw>
+<msg timestamp="20211214 14:30:15.232" level="INFO">${string_resp} = {'id': '385', 'createdAt': '2021-12-14T09:02:52.853Z'}</msg>
+<status status="PASS" starttime="20211214 14:30:14.457" endtime="20211214 14:30:15.232"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${user_id}</var>
+<arg>${string_resp}</arg>
+<arg>$.id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211214 14:30:15.255" level="INFO">${user_id} = ['385']</msg>
+<status status="PASS" starttime="20211214 14:30:15.233" endtime="20211214 14:30:15.255"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${user_id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211214 14:30:15.256" level="INFO">['385']</msg>
+<status status="PASS" starttime="20211214 14:30:15.255" endtime="20211214 14:30:15.256"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>201</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20211214 14:30:15.256" endtime="20211214 14:30:15.256"/>
+</kw>
+<status status="PASS" starttime="20211214 14:30:14.455" endtime="20211214 14:30:15.256"/>
+</kw>
+<status status="PASS" starttime="20211214 14:30:14.453" endtime="20211214 14:30:15.256"/>
+</test>
+<test id="s1-s1-t2" name="Verify that user should get created">
+<kw name="Add user">
+<arg>Jatin</arg>
+<arg>Robot</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${name}</arg>
+<arg>job=${job}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211214 14:30:15.259" level="INFO">${body} = {'name': 'Jatin', 'job': 'Robot'}</msg>
+<status status="PASS" starttime="20211214 14:30:15.258" endtime="20211214 14:30:15.259"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=text/plain</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211214 14:30:15.259" level="INFO">${header} = {'Content-Type': 'text/plain'}</msg>
+<status status="PASS" starttime="20211214 14:30:15.259" endtime="20211214 14:30:15.259"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${api_url}</var>
+<arg>${APIBASE_URL}/api/users</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211214 14:30:15.260" level="INFO">${api_url} = https://reqres.in/api/users</msg>
+<status status="PASS" starttime="20211214 14:30:15.259" endtime="20211214 14:30:15.260"/>
+</kw>
+<kw name="Get response from the PUT request" library="Basefile">
+<var>${string_resp}</var>
+<arg>${api_url}</arg>
+<arg>${body}</arg>
+<arg>${header}</arg>
+<kw name="POST" library="RequestsLibrary">
+<var>${string_resp}</var>
+<arg>${api_url}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20211214 14:30:15.968" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'text/plain', 'Content-Length': '20'} 
+ body=name=Jatin&amp;job=Robot 
+ </msg>
+<msg timestamp="20211214 14:30:15.968" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Tue, 14 Dec 2021 09:02:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"33-aHacqvD+c0Bn90PwqzfRAIzGCd0"', 'via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=0MxHfDBKqC%2BUapH%2BgUMgxfbuRwlNHwwIvTWGZBh4RVsS9zHiHGIXc78nr9Ir3qf0Oxknj59s3U7ao4%2BQmdXMet1cLgx8%2Fd9%2B290PLzcZVDXeAvvFd9nkrdP1B5U%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6bd6417f4c3a31a5-BOM', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400'} 
+ body={"id":"960","createdAt":"2021-12-14T09:02:53.643Z"} 
+ </msg>
+<msg timestamp="20211214 14:30:15.968" level="INFO">${string_resp} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211214 14:30:15.260" endtime="20211214 14:30:15.968"/>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<var>${json_resp}</var>
+<arg>${string_resp.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20211214 14:30:15.969" level="INFO">${json_resp} = {'id': '960', 'createdAt': '2021-12-14T09:02:53.643Z'}</msg>
+<status status="PASS" starttime="20211214 14:30:15.968" endtime="20211214 14:30:15.969"/>
+</kw>
+<msg timestamp="20211214 14:30:15.969" level="INFO">${string_resp} = {'id': '960', 'createdAt': '2021-12-14T09:02:53.643Z'}</msg>
+<status status="PASS" starttime="20211214 14:30:15.260" endtime="20211214 14:30:15.969"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${user_id}</var>
+<arg>${string_resp}</arg>
+<arg>$.id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211214 14:30:15.987" level="INFO">${user_id} = ['960']</msg>
+<status status="PASS" starttime="20211214 14:30:15.969" endtime="20211214 14:30:15.987"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${user_id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211214 14:30:15.988" level="INFO">['960']</msg>
+<status status="PASS" starttime="20211214 14:30:15.987" endtime="20211214 14:30:15.988"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>201</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20211214 14:30:15.988" endtime="20211214 14:30:15.988"/>
+</kw>
+<status status="PASS" starttime="20211214 14:30:15.258" endtime="20211214 14:30:15.988"/>
+</kw>
+<status status="PASS" starttime="20211214 14:30:15.257" endtime="20211214 14:30:15.988"/>
+</test>
+<test id="s1-s1-t3" name="Verify that user should get created">
+<kw name="Add user">
+<arg>Robot</arg>
+<arg>Python</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${name}</arg>
+<arg>job=${job}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211214 14:30:15.991" level="INFO">${body} = {'name': 'Robot', 'job': 'Python'}</msg>
+<status status="PASS" starttime="20211214 14:30:15.990" endtime="20211214 14:30:15.991"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=text/plain</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211214 14:30:15.991" level="INFO">${header} = {'Content-Type': 'text/plain'}</msg>
+<status status="PASS" starttime="20211214 14:30:15.991" endtime="20211214 14:30:15.991"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${api_url}</var>
+<arg>${APIBASE_URL}/api/users</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211214 14:30:15.992" level="INFO">${api_url} = https://reqres.in/api/users</msg>
+<status status="PASS" starttime="20211214 14:30:15.991" endtime="20211214 14:30:15.992"/>
+</kw>
+<kw name="Get response from the PUT request" library="Basefile">
+<var>${string_resp}</var>
+<arg>${api_url}</arg>
+<arg>${body}</arg>
+<arg>${header}</arg>
+<kw name="POST" library="RequestsLibrary">
+<var>${string_resp}</var>
+<arg>${api_url}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20211214 14:30:16.658" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'text/plain', 'Content-Length': '21'} 
+ body=name=Robot&amp;job=Python 
+ </msg>
+<msg timestamp="20211214 14:30:16.658" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Tue, 14 Dec 2021 09:02:54 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"33-FriXCJ+Dky1rW5N5j7BmNdMu914"', 'via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=jL9NlGzbpSGcMxeZdQh%2F50b6R04LLP4ysPpfP9x3IebR06zz8PkgTeS8uH8KNUukUmFspVlck7Ur61rQhaH1IBXypZh6IK%2B%2Fta6LOjLKtQAtXpvuS1uYaX10R4A%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6bd64183bd3a84f5-BOM', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400'} 
+ body={"id":"226","createdAt":"2021-12-14T09:02:54.348Z"} 
+ </msg>
+<msg timestamp="20211214 14:30:16.658" level="INFO">${string_resp} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211214 14:30:15.992" endtime="20211214 14:30:16.658"/>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<var>${json_resp}</var>
+<arg>${string_resp.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20211214 14:30:16.660" level="INFO">${json_resp} = {'id': '226', 'createdAt': '2021-12-14T09:02:54.348Z'}</msg>
+<status status="PASS" starttime="20211214 14:30:16.659" endtime="20211214 14:30:16.660"/>
+</kw>
+<msg timestamp="20211214 14:30:16.660" level="INFO">${string_resp} = {'id': '226', 'createdAt': '2021-12-14T09:02:54.348Z'}</msg>
+<status status="PASS" starttime="20211214 14:30:15.992" endtime="20211214 14:30:16.660"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${user_id}</var>
+<arg>${string_resp}</arg>
+<arg>$.id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211214 14:30:16.687" level="INFO">${user_id} = ['226']</msg>
+<status status="PASS" starttime="20211214 14:30:16.660" endtime="20211214 14:30:16.687"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${user_id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211214 14:30:16.688" level="INFO">['226']</msg>
+<status status="PASS" starttime="20211214 14:30:16.687" endtime="20211214 14:30:16.688"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>201</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20211214 14:30:16.688" endtime="20211214 14:30:16.688"/>
+</kw>
+<status status="PASS" starttime="20211214 14:30:15.990" endtime="20211214 14:30:16.688"/>
+</kw>
+<status status="PASS" starttime="20211214 14:30:15.989" endtime="20211214 14:30:16.688"/>
+</test>
+<status status="PASS" starttime="20211214 14:30:13.676" endtime="20211214 14:30:16.689"/>
+</suite>
+<status status="PASS" starttime="20211214 14:30:13.661" endtime="20211214 14:30:16.690"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="APITest DataDriver">Suites.APITest DataDriver</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20211214 14:30:15.257" level="WARN">Multiple test cases with name 'Verify that user should get created' executed in test suite 'Suites.APITest DataDriver'.</msg>
+<msg timestamp="20211214 14:30:15.989" level="WARN">Multiple test cases with name 'Verify that user should get created' executed in test suite 'Suites.APITest DataDriver'.</msg>
+</errors>
+</robot>

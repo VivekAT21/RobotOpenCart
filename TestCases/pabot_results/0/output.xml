@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211214 14:30:13.660" rpa="false" schemaversion="2">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="APITest" source="D:\projects\automationworkspace\OpenCart\TestCases\APITest.robot">
+<test id="s1-s1-t1" name="Verify that data gets displayed using &quot;Create Session&quot; method">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>get_student_name</arg>
+<arg>${APIBASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20211214 14:30:13.956" level="INFO">Creating Session using : alias=get_student_name, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20211214 14:30:13.956" endtime="20211214 14:30:13.956"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>get_student_name</arg>
+<arg>/api/users?page=${page_number}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20211214 14:30:13.969" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20211214 14:30:14.258" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20211214 14:30:14.258" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 14 Dec 2021 09:02:52 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '1760', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=cUPT3r67qvWnUI3r3SwVP4A92XlAzUxi7Cv9FbweQsOPA3vN2hnaMfkH%2FqbfdDYyyhEgS2lGCrLIUUXLYUdROPcPgXhnn5qFdvYPGYQOE2gCFl31T51NivS4VBs%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '6bd6417798252e1c-BOM', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20211214 14:30:14.258" level="INFO">C:\Users\vivek.garg\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20211214 14:30:14.258" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20211214 14:30:13.968" endtime="20211214 14:30:14.258"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211214 14:30:14.259" endtime="20211214 14:30:14.259"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211214 14:30:14.259" endtime="20211214 14:30:14.272"/>
+</kw>
+<status status="PASS" starttime="20211214 14:30:13.955" endtime="20211214 14:30:14.273"/>
+</test>
+<test id="s1-s1-t2" name="Verify that data gets displayed WITHOUT using &quot;Create Session&quot; method">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${APIBASE_URL}${User_api}</arg>
+<arg>params=page=${page_number}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20211214 14:30:14.496" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20211214 14:30:14.496" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 14 Dec 2021 09:02:52 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '1582', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=NGOYe1fuTyKuUq07xhhFROzzq3tI2kDmPcVDzeCb%2BkvKT5fLn08E7SeVlFpsyXDfmHzMaue6ZCMduFfY4yUuQWqni2korrJNq4EsQRLM4eBCcJ4WXBpasPlE11I%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '6bd64178eef485ab-BOM', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20211214 14:30:14.497" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20211214 14:30:14.273" endtime="20211214 14:30:14.497"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20211214 14:30:14.497" endtime="20211214 14:30:14.497"/>
+</kw>
+<status status="PASS" starttime="20211214 14:30:14.273" endtime="20211214 14:30:14.497"/>
+</test>
+<test id="s1-s1-t3" name="Verify that data gets displayed using &quot;BASEFILE&quot; generic method">
+<kw name="Catenate" library="BuiltIn">
+<var>${api_url}</var>
+<arg>${APIBASE_URL}${User_api}page=${page_number}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211214 14:30:14.499" level="INFO">${api_url} = https://reqres.in/api/users?page=2</msg>
+<status status="PASS" starttime="20211214 14:30:14.498" endtime="20211214 14:30:14.499"/>
+</kw>
+<kw name="Get response from the GET request" library="Basefile">
+<var>${response}</var>
+<arg>${api_url}</arg>
+<kw name="GET" library="RequestsLibrary">
+<var>${req_response}</var>
+<arg>${api_url}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20211214 14:30:14.701" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20211214 14:30:14.701" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 14 Dec 2021 09:02:52 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '1582', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=B8CUVmndjb2H%2Bt9fjazSgM4W7FxUOt8saSFZ5mC%2BjmUzWHmtUXWVDxvsZD7IP049OoyONiXlzFPggV140uk0KAQnyg4s2znzbGXiszG3RVpBgP2V7iYaU0Zzyig%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '6bd6417a6eee85f0-BOM', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20211214 14:30:14.702" level="INFO">${req_response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20211214 14:30:14.499" endtime="20211214 14:30:14.702"/>
+</kw>
+<msg timestamp="20211214 14:30:14.702" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20211214 14:30:14.499" endtime="20211214 14:30:14.702"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20211214 14:30:14.702" endtime="20211214 14:30:14.703"/>
+</kw>
+<status status="PASS" starttime="20211214 14:30:14.498" endtime="20211214 14:30:14.704"/>
+</test>
+<test id="s1-s1-t4" name="Verify that user gets created with POST request">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=vivek003</arg>
+<arg>job=QA</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211214 14:30:14.705" level="INFO">${body} = {'name': 'vivek003', 'job': 'QA'}</msg>
+<status status="PASS" starttime="20211214 14:30:14.705" endtime="20211214 14:30:14.705"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=text/plain</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211214 14:30:14.706" level="INFO">${header} = {'Content-Type': 'text/plain'}</msg>
+<status status="PASS" starttime="20211214 14:30:14.705" endtime="20211214 14:30:14.706"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${string_resp}</var>
+<arg>${APIBASE_URL}/api/users</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20211214 14:30:15.428" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'text/plain', 'Content-Length': '20'} 
+ body=name=vivek003&amp;job=QA 
+ </msg>
+<msg timestamp="20211214 14:30:15.428" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Tue, 14 Dec 2021 09:02:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"33-H/cUptjhW3eX7aqk6Xor9R2wlYo"', 'via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=gfc7T4llneg9vn%2BzLW67shoHEE6eiecq9gBqmq8guwjnW6IZVOjqhlo0fsYgaXvcK5lQ6BjtOZxniKjx6aHl%2B6La39hndMA0hcfGBWT%2BSZj94o7ofvJhU4VmJLc%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6bd6417c0cae6ee6-BOM', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400'} 
+ body={"id":"194","createdAt":"2021-12-14T09:02:53.116Z"} 
+ </msg>
+<msg timestamp="20211214 14:30:15.429" level="INFO">${string_resp} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211214 14:30:14.707" endtime="20211214 14:30:15.429"/>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<var>${json_resp}</var>
+<arg>${string_resp.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20211214 14:30:15.431" level="INFO">${json_resp} = {'id': '194', 'createdAt': '2021-12-14T09:02:53.116Z'}</msg>
+<status status="PASS" starttime="20211214 14:30:15.430" endtime="20211214 14:30:15.431"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${user_id}</var>
+<arg>${json_resp}</arg>
+<arg>$.id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20211214 14:30:15.458" level="INFO">${user_id} = ['194']</msg>
+<status status="PASS" starttime="20211214 14:30:15.432" endtime="20211214 14:30:15.458"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${user_id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211214 14:30:15.460" level="INFO">['194']</msg>
+<status status="PASS" starttime="20211214 14:30:15.458" endtime="20211214 14:30:15.460"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>201</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20211214 14:30:15.460" endtime="20211214 14:30:15.461"/>
+</kw>
+<status status="PASS" starttime="20211214 14:30:14.704" endtime="20211214 14:30:15.461"/>
+</test>
+<status status="PASS" starttime="20211214 14:30:13.683" endtime="20211214 14:30:15.462"/>
+</suite>
+<status status="PASS" starttime="20211214 14:30:13.668" endtime="20211214 14:30:15.464"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="APITest">Suites.APITest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20211214 14:30:13.969" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+</errors>
+</robot>
